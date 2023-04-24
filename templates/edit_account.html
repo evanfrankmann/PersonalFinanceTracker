@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Edit Account</h1>
+
+    <form action="{{ url_for('edit_account', account_id=account.id) }}" method="post">
+        <label for="account_name">Account Name:</label>
+        <input type="text" id="account_name" name="account_name" value="{{ account.name }}" required>
+        <button type="submit">Update Account</button>
+    </form>
+{% endblock %}

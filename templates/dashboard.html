@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+
+    <h2>Accounts</h2>
+    <ul>
+    {% for account in accounts %}
+        <li>{{ account.name }}: {{ account.balance }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Transactions</h2>
+    <ul>
+    {% for transaction in transactions %}
+        <li>{{ transaction.date }} - {{ transaction.description }}: {{ transaction.amount }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Categories</h2>
+    <ul>
+    {% for category in categories %}
+        <li>{{ category.name }} ({{ category.type }})</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
